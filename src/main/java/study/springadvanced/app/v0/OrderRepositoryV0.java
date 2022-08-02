@@ -13,7 +13,7 @@ public class OrderRepositoryV0 {
             throw new IllegalStateException("예외 발생!");
         }
 
-        sleep(1000);
+        sleep(1000);    // 상품을 저장하는데 1초가 거린다고 가정
     }
 
     private void sleep(int millis) {
