@@ -13,6 +13,7 @@ public class HelloTraceV1 {
     private static final String COMPLETE_PREFIX = "<--";
     private static final String EX_PREFIX = "<X-";
 
+    // 로그 메세지를 파라미터로 받아서 시작로그 추력
     public TraceStatus begin(String message) {
         TraceId traceId = new TraceId();
         Long startTimeMs = System.currentTimeMillis();
@@ -23,6 +24,7 @@ public class HelloTraceV1 {
 
     }
 
+    //
     public void end(TraceStatus status) {
         complete(status, null);
     }
@@ -43,6 +45,13 @@ public class HelloTraceV1 {
                     e.toString());
         }
     }
+    private static String addSpace(String prefix, int level) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < level; i++) {
+            sb.append( (i == level - 1) ? "|" + prefix : "| ");
+        }
+        return sb.toString();
+    }
 //    prefix: -->
 //       level 0:
 //       level 1: |-->
@@ -55,13 +64,4 @@ public class HelloTraceV1 {
 //       level 0:
 //       level 1: |<X-
 //       level 2: |   |<X-
-    private static String addSpace(String prefix, int level) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < level; i++) {
-            sb.append( (i == level - 1) ? "|" + prefix : "| ");
-        }
-        return sb.toString();
-    }
-
-
 }
