@@ -16,6 +16,11 @@ public class TimeDecorator implements Component{
         log.info("TimeDecorator 실행");
         long startTime = System.currentTimeMillis();
 
-        return null;
+        String result = component.operation();
+
+        long endTime = System.currentTimeMillis();
+        long resultTime = endTime - startTime;
+        log.info("TimeDecorator 종료 resultTime={}ms", resultTime);
+        return result;
     }
 }
