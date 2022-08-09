@@ -1,8 +1,7 @@
-package study.springadvanced.app.v4;
+package study.springadvanced.app.v1.v4;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import study.springadvanced.trace.TraceStatus;
 import study.springadvanced.trace.logtrace.LogTrace;
 import study.springadvanced.trace.template.AbstractTemplate;
 
